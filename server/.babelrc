@@ -1,0 +1,6 @@
+// 바벨 환경설정 
+
+
+{
+    "presets" : ["@babel/preset-env"]
+}
