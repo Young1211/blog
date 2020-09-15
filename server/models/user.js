@@ -61,7 +61,7 @@ export default User; //모듈화해서 내보냄
 *게시글을 지우고, 게시물에 달린 댓글까지 지울 경우에는
 post_id, comment_id를 같이 적어준다 
 
-
+ㅅㅂ
 
 
 */
