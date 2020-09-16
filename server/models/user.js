@@ -1,5 +1,5 @@
 import moment from 'moment'
-import monoose from 'mongoose'
+import mongoose from 'mongoose'
 
 //유저에 관련된 모듈 만듦
 
@@ -25,7 +25,7 @@ const UserSchema = new mongoose.Schema({
     },
     register_date:{ //가입일자
         type: Date,
-        defalut: moment().format("YYYY-MM-DD")
+        defalut: moment().format("YYYY-MM-DD hh:mm:ss") //2020-09-16
     },
     comments: [ //댓글 
         {
@@ -35,6 +35,7 @@ const UserSchema = new mongoose.Schema({
             },
             comment_id:{
                 type:mongoose.Schema.Types.ObjectId,
+                ref: "posts",
             },
         },
     ],
@@ -45,6 +46,8 @@ const UserSchema = new mongoose.Schema({
             
         },
     ],
+
+
 
 });
 
@@ -61,7 +64,9 @@ export default User; //모듈화해서 내보냄
 *게시글을 지우고, 게시물에 달린 댓글까지 지울 경우에는
 post_id, comment_id를 같이 적어준다 
 
-ㅅㅂ
+*moment()
+-현지 시간으로 시간을 제공
+
 
 
 */
