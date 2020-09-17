@@ -8,6 +8,8 @@ import cors from "cors";
 
 //Routes
 import postRoutes from "./routes/api/post";
+import userRoutes from "./routes/api/user";
+import authRoutes from "./routes/api/auth"; //에러 발생함
 
 import morgan from "morgan";
 
@@ -30,6 +32,7 @@ mongoose
     .connect(MONGO_URI, { //string,옵션
         useNewUrlParser: true, //옵션을 적어놔야 경고가 안 뜸
         useUnifiedTopology: true,
+        useCreateIndex:true,
     })
     .then(()=>console.log("MongoDB connecting Success!!"))
     .catch((e)=>console.log(e))
@@ -37,7 +40,8 @@ mongoose
 //Use routes
 app.get('/'); // '/'-홈
 app.use("/api/post", postRoutes)
-
+app.use("/api/user", userRoutes)
+app.use("/api/auth", authRoutes)
 export default app;
 //밖으로 내보내기
 

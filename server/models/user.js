@@ -20,7 +20,7 @@ const UserSchema = new mongoose.Schema({
     },
     role: {
         type: String,
-        enum: ["MainJuin", "SubJuin", "User"],
+        enum: ["MainJuin", "SubJuin", "User"], //개발자만 글 작성 가능
         defalut:"User",
     },
     register_date:{ //가입일자
@@ -51,7 +51,7 @@ const UserSchema = new mongoose.Schema({
 
 });
 
-const User = monoose.model("user", UserSchema); //userschema를 user라고 사용하겠다
+const User = mongoose.model("user", UserSchema); //userschema를 user라고 사용하겠다
 export default User; //모듈화해서 내보냄
 
 /*
