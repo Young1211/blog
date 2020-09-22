@@ -42,6 +42,7 @@ app.get('/'); // '/'-홈
 app.use("/api/post", postRoutes)
 app.use("/api/user", userRoutes)
 app.use("/api/auth", authRoutes)
+
 export default app;
 //밖으로 내보내기
 

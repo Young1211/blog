@@ -6,6 +6,8 @@ import auth from "../../middleware/auth"
 
 const router = express.Router();
 
+require("babel-polyfill");
+//모듈을 가져오면 런타임에 필요한 plyfill 동작 추가
 
 //api/post
 router.get("/", async(req, res)=>{
@@ -47,6 +49,12 @@ export default router;
 await를 쓰기 싫으면 끝에 .exec() 붙여줌 
 
 find() 함수로 데이터 전체를 가져오면 과부하가 올 수 있어서 조건을 걸어둠
+
+
+require("babel-polyfill");
+//혹은
+import 'babel-polyfill';
+
 
 */
 
